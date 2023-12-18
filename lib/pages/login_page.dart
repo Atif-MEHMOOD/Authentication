@@ -53,9 +53,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   final FireBaseAuthService _auth = FireBaseAuthService();
-  void Login(BuildContext context) async {
-    String email = usernameController.text;
-    String password = passwordController.text;
+  void Login(BuildContext context, email, password) async {
+
     UserViewModel checkuser= UserViewModel();
 
     // Show the circular loading indicator
@@ -197,13 +196,15 @@ class _LoginPageState extends State<LoginPage> {
                    text: 'Sign In',
     onTap: () {
       if (_formKey.currentState?.validate() ?? false) {
-        Login(context);
-        // Utils.snackbar('Sign In successful!', context);
+
+
        Map data={
          "email": usernameController.text,
          "password":  passwordController.text,
              };
-
+       final email= usernameController.text.trim();
+       final password= passwordController.text.trim();
+       Login(context,email, password);
         // authview.loginapi(data, context);
 
 

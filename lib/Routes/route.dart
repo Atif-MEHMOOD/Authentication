@@ -1,4 +1,4 @@
-import 'package:authenticationproject/pages/Homepage.dart';
+import 'package:authenticationproject/pages/Home/Homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:authenticationproject/pages/Register_screen.dart';
 import 'package:authenticationproject/pages/splash_screen.dart';
@@ -14,7 +14,7 @@ class Routes {
       case RouteName.login:
         return MaterialPageRoute(builder: (BuildContext context) => LoginPage());
       case RouteName.MyHomePage:
-        return MaterialPageRoute(builder: (BuildContext context) => MyHomePage());
+        return MaterialPageRoute(builder: (BuildContext context) => CustomerHomeScreen());
 
 
       case RouteName.register:

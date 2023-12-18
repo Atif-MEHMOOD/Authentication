@@ -58,8 +58,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
 
   void Signup(BuildContext context) async {
-    String email = RegisterusernameController.text;
-    String password = RegisterpasswordController.text;
+    String email = RegisterusernameController.text.trim();
+    String password = RegisterpasswordController.text.trim();
 
     // Show the circular loading indicator
     showDialog(
