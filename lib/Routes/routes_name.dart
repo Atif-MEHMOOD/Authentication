@@ -3,4 +3,5 @@ class RouteName{
   static const String register = "registerscreen";
   static const String splashscreen = "splashscreen";
   static const String MyHomePage = "MyHomePage";
+  static const String SearchScreen = "Searchscreen";
 }

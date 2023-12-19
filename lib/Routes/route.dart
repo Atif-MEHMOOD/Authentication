@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:authenticationproject/pages/Register_screen.dart';
 import 'package:authenticationproject/pages/splash_screen.dart';
 
+import '../pages/Home/search_screen.dart';
 import '../pages/login_page.dart';
 import 'routes_name.dart';
 
@@ -15,6 +16,8 @@ class Routes {
         return MaterialPageRoute(builder: (BuildContext context) => LoginPage());
       case RouteName.MyHomePage:
         return MaterialPageRoute(builder: (BuildContext context) => CustomerHomeScreen());
+      case RouteName.SearchScreen:
+        return MaterialPageRoute(builder: (BuildContext context) => SearchScreen());
 
 
       case RouteName.register:
@@ -33,3 +36,5 @@ class Routes {
     }
   }
 }
+
+

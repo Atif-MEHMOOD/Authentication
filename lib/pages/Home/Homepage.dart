@@ -1,5 +1,7 @@
 import 'package:authenticationproject/pages/Home/home_view.dart';
 import 'package:flutter/material.dart';
+
+import '../Category/category_screen.dart';
 class CustomerHomeScreen extends StatefulWidget {
   const CustomerHomeScreen({super.key});
 
@@ -11,7 +13,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
   int _Seletedindex=0;
   final List<Widget> _tabs=[
     Homeview(),
-    Center(child: Text('Search')),
+    Category(),
     Center(child: Text('Stores')),
     Center(child: Text('Cart')),
     Center(child: Text('Profile')),

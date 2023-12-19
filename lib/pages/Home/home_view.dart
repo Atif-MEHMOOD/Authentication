@@ -1,6 +1,9 @@
+import 'package:authenticationproject/Routes/routes_name.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+
+import '../../Utils/search_bar.dart';
 class Homeview extends StatefulWidget {
   const Homeview({super.key});
 
@@ -16,48 +19,18 @@ class _HomeviewState extends State<Homeview> {
     MediaQuery.of(context).size;
     return  DefaultTabController(
 
-      length: 10,
+      length: 9,
       child: Scaffold(
         appBar: AppBar(
 
           elevation: 0,
           automaticallyImplyLeading: false,
-          title: Container(
-            height: 35,
-           
-
-            decoration:  BoxDecoration(
-              border: Border.all(color: Colors.yellow, width: 1.4),
-borderRadius: BorderRadius.circular(25)
-
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(Icons.search , color: Colors.grey,),
-                Text('What are you looking for?', style: TextStyle(fontSize: 16, color: Colors.grey),),
-
-              Container(
-                height: 32,
-                width: 75,
-                decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                color: Colors.yellow
-              ),
-              child: Center(
-                child: const Text(
-                  'Search', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ),)
-              ],
-
-            ),
-          ),
+          title: const Search_bar(),
           bottom: const TabBar(
 
             isScrollable: true,
-            physics: ScrollPhysics(),
-            indicatorColor: Colors.yellow,
+
+          indicatorColor: Colors.yellow,
             indicatorWeight: 8.0,
             indicatorPadding: EdgeInsets.zero,
             tabs: [
@@ -95,6 +68,8 @@ borderRadius: BorderRadius.circular(25)
     );
   }
 }
+
+
 
 class RepeatedTabs extends StatelessWidget {
 
