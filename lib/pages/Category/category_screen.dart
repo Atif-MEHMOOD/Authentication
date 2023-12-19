@@ -31,8 +31,9 @@ class _CategoryState extends State<Category> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+
 backgroundColor: Colors.white,
-        elevation: 0,
+
         automaticallyImplyLeading: false,
         title: const Search_bar(),
         
@@ -40,6 +41,7 @@ backgroundColor: Colors.white,
       ),
       body:  Stack(
         children: [
+          
 
             Positioned(
             bottom: 0,
@@ -52,7 +54,7 @@ backgroundColor: Colors.white,
             right: 0,
             child: CategoryBody(size),
           )
-          
+
         ],
       ),
 
@@ -63,24 +65,41 @@ backgroundColor: Colors.white,
   Widget Sidebare( size){
 
 
-    return Container(
-        color: Colors.grey.shade300,
-        height: size.height * 0.8,
-        width: size.width * 0.2,
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-
-
-          itemCount: item.length,
-          itemBuilder: ( context, index )   {
-          return  SizedBox(
-              height: 100,
-            child: Text(item[index].label),
-          );
-        },
-        )
+    return SingleChildScrollView(
+      child: GestureDetector(
+      
+        child: SizedBox(
+      
+            height: size.height * 0.80,
+            width: size.width * 0.2,
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+      
+      
+              itemCount: item.length,
+              itemBuilder: ( context, index )   {
+              return  GestureDetector(
+                  onTap: (){
+                    for(var a in item){
+                    a.isSelected=false;
+                    }
+                    setState(() {
+                      item[index].isSelected=true;
+                    });
+                  },
+                  child: Container(
+                    color: item[index].isSelected == true ? Colors.white : Colors.grey.shade300,
+                  height: 100,
+                  child: Text(item[index].label)));
+            },
+            )
+        ),
+      ),
     );
   }
+
+
+
   Widget CategoryBody( size){
     return Container(
       color: Colors.white,
