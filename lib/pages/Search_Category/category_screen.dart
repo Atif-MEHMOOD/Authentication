@@ -1,5 +1,6 @@
 import 'package:authenticationproject/Utils/search_bar.dart';
 import 'package:authenticationproject/pages/Categories/men_category.dart';
+import 'package:authenticationproject/pages/Categories/women_category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -149,7 +150,7 @@ backgroundColor: Colors.white,
 children: const[
 
   MenCategory(),
-      Center(child: Text('Women')),
+  WomenCategory(),
       Center(child: Text('Shoes')),
       Center(child: Text('Bags')),
       Center(child: Text('Electronics')),
