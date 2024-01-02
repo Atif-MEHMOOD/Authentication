@@ -1,7 +1,9 @@
 import 'package:authenticationproject/pages/Home/home_view.dart';
 import 'package:flutter/material.dart';
 
-import '../Category/category_screen.dart';
+import '../Search_Category/category_screen.dart';
+
+
 class CustomerHomeScreen extends StatefulWidget {
   const CustomerHomeScreen({super.key});
 

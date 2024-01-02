@@ -157,8 +157,8 @@ class AnimatedFlutterLogo extends StatelessWidget {
       child: Center(
         child: Transform.scale(
           scale: scale,
-          child: Image(
-            image: AssetImage('lib/images/logo.png'),
+          child: const Image(
+            image: AssetImage('lib/images/component_image/logo.png'),
           ),
         ),
       ),

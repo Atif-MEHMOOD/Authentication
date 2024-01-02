@@ -1,4 +1,5 @@
 import 'package:authenticationproject/Utils/search_bar.dart';
+import 'package:authenticationproject/pages/Categories/men_category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -23,9 +24,25 @@ class Category extends StatefulWidget {
 }
 
 
+
 class _CategoryState extends State<Category> {
 
+  @override
+  void initState() {
+    for(var a in item){
+      a.isSelected=false;
+    }
 
+
+    // setState(() {
+
+      item[0].isSelected=true;
+    // });
+    // TODO: implement initState
+    super.initState();
+  }
+
+final PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -67,31 +84,31 @@ backgroundColor: Colors.white,
 
     return SingleChildScrollView(
       child: GestureDetector(
-      
+
         child: SizedBox(
-      
+
             height: size.height * 0.80,
             width: size.width * 0.2,
             child: ListView.builder(
               scrollDirection: Axis.vertical,
-      
-      
+
+
               itemCount: item.length,
               itemBuilder: ( context, index )   {
+
               return  GestureDetector(
                   onTap: (){
-                    for(var a in item){
-                    a.isSelected=false;
-                    }
-                    setState(() {
-                      item[index].isSelected=true;
-                    });
+                  _controller.animateToPage(index, duration: Duration(microseconds: 100,), curve: Curves.bounceInOut);
                   },
                   child: Container(
+
                     color: item[index].isSelected == true ? Colors.white : Colors.grey.shade300,
                   height: 100,
-                  child: Text(item[index].label)));
+
+                  child: Center(child: Text(item[index].label))));
+
             },
+
             )
         ),
       ),
@@ -105,7 +122,47 @@ backgroundColor: Colors.white,
       color: Colors.white,
       height: size.height * 0.8,
       width: size.width * 0.8,
+      child: PageView(
+        scrollDirection: Axis.vertical,
+        controller: _controller,
+        onPageChanged: (index) {
+          for(var a in item){
+            a.isSelected=false;
+          }
+
+
+          setState(() {
+            _controller.animateToPage(
+              index,
+
+              duration: const Duration(milliseconds: 100),
+              curve: Curves.bounceInOut,
+
+            );
+            item[index].isSelected=true;
+          });
+        },
+
+
+
+
+children: const[
+
+  MenCategory(),
+      Center(child: Text('Women')),
+      Center(child: Text('Shoes')),
+      Center(child: Text('Bags')),
+      Center(child: Text('Electronics')),
+    Center(child: Text('Accessories')),
+   Center(child: Text('Home & Garden')),
+   Center(child: Text('Kids')),
+   Center(child: Text('Beauty')),
+
+],
+
+      )
     );
+
   }
 
 }
