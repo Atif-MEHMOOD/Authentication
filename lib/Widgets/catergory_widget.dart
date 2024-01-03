@@ -1,4 +1,6 @@
 
+import 'dart:developer';
+
 import 'package:authenticationproject/pages/Categories/subcategory.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +28,7 @@ class SliderBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
+                    categoryNameOfSlider == 'Beauty' ? const Text(''):
                     const Text('<<', style: TextStyle(
                       fontSize: 16,
                       color:Colors.brown,
@@ -38,6 +41,8 @@ class SliderBar extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       letterSpacing: 10,
                     ),),
+
+                    categoryNameOfSlider == 'Men' ? const Text('') :
                     const Text('>>', style: TextStyle(
                       fontSize: 16,
                       color:Colors.brown,
@@ -54,16 +59,17 @@ class SliderBar extends StatelessWidget {
   }
 }
 
+
 class SubCategoryModel extends StatelessWidget {
   String subCategoryImage;
   String subCategoryName;
-  String mainCategoryName = "";
+  String mainCategoryName;
   String subCategoryLabel;
-  SubCategoryModel({
-
-
-
-    super.key, required this.subCategoryImage, required this.subCategoryName, required mainCategoryName, required this.subCategoryLabel
+  SubCategoryModel({super.key,
+    required this.subCategoryImage,
+    required this.subCategoryName,
+    required this.mainCategoryName,
+    required this.subCategoryLabel,
   });
 
   @override
@@ -75,11 +81,11 @@ class SubCategoryModel extends StatelessWidget {
 
           SizedBox(
               height: MediaQuery.of(context).size.height * 0.08,
-              width: MediaQuery.of(context).size.width  * 0.15,
+              width: MediaQuery.of(context).size.width  * 0.17,
 
               child: Image(image: AssetImage(subCategoryImage))),
 
-          Text(subCategoryLabel)
+          Text(subCategoryLabel, style: const TextStyle(fontSize: 12),)
 
 
         ],

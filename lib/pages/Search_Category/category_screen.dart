@@ -1,5 +1,12 @@
 import 'package:authenticationproject/Utils/search_bar.dart';
+import 'package:authenticationproject/pages/Categories/Home&%20Garden.dart';
+import 'package:authenticationproject/pages/Categories/Kids.dart';
+import 'package:authenticationproject/pages/Categories/accessories_category.dart';
+import 'package:authenticationproject/pages/Categories/bags.dart';
+import 'package:authenticationproject/pages/Categories/beauty_category.dart';
+import 'package:authenticationproject/pages/Categories/electronics_category.dart';
 import 'package:authenticationproject/pages/Categories/men_category.dart';
+import 'package:authenticationproject/pages/Categories/shoes_category.dart';
 import 'package:authenticationproject/pages/Categories/women_category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +106,7 @@ backgroundColor: Colors.white,
 
               return  GestureDetector(
                   onTap: (){
-                  _controller.animateToPage(index, duration: Duration(microseconds: 100,), curve: Curves.bounceInOut);
+                  _controller.animateToPage(index, duration: const Duration(microseconds: 100,), curve: Curves.bounceInOut);
                   },
                   child: Container(
 
@@ -151,13 +158,14 @@ children: const[
 
   MenCategory(),
   WomenCategory(),
-      Center(child: Text('Shoes')),
-      Center(child: Text('Bags')),
-      Center(child: Text('Electronics')),
-    Center(child: Text('Accessories')),
-   Center(child: Text('Home & Garden')),
-   Center(child: Text('Kids')),
-   Center(child: Text('Beauty')),
+  ShoesCategory(),
+  BagsCategory(),
+  ElectronicsCategory(),
+  AccessoriesCategory(),
+  HomeAndGardenCategory(),
+  KidsCategory(),
+  BeautyCategory(),
+
 
 ],
 

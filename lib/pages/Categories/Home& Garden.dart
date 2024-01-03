@@ -5,14 +5,14 @@ import 'package:authenticationproject/Widgets/catergory_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class WomenCategory extends StatefulWidget {
-  const WomenCategory({super.key});
+class HomeAndGardenCategory extends StatefulWidget {
+  const HomeAndGardenCategory({super.key});
 
   @override
-  State<WomenCategory> createState() => _WomenCategoryState();
+  State<HomeAndGardenCategory> createState() => _HomeAndGardenCategoryState();
 }
 
-class _WomenCategoryState extends State<WomenCategory> {
+class _HomeAndGardenCategoryState extends State<HomeAndGardenCategory> {
   @override
   Widget build(BuildContext context) {
     return  Padding(
@@ -29,15 +29,16 @@ class _WomenCategoryState extends State<WomenCategory> {
               child: Column(
 
                 children: [
-                  const CategoryHeaderLabel( categoryHeaderName: 'Women Category',),
+                  const CategoryHeaderLabel( categoryHeaderName: 'Home Category',),
                   SizedBox(height: MediaQuery.of(context).size.height *0.68,
                       child: GridView.count(crossAxisCount: 3,
                         mainAxisSpacing: 70,
                         crossAxisSpacing: 15,
-                        children: List.generate(women.length, (index)  {
-                          return SubCategoryModel(subCategoryImage: 'lib/images/women/women$index.jpg',
-                            mainCategoryName: 'women', subCategoryName: women[index],
-                            subCategoryLabel: women[index],);
+                        children: List.generate(homeandgarden.length, (index)  {
+                          return SubCategoryModel(subCategoryImage: 'lib/images/homegarden/home$index.jpg',
+                            mainCategoryName: 'home And Garden',
+                            subCategoryName: homeandgarden[index],
+                            subCategoryLabel: homeandgarden[index],);
 
 
 
@@ -57,7 +58,7 @@ class _WomenCategoryState extends State<WomenCategory> {
           const Positioned(
             bottom: 0,
             right: 0,
-            child: SliderBar( categoryNameOfSlider: 'Women',),
+            child: SliderBar( categoryNameOfSlider: 'Home And Garden',),
 
           ),
 

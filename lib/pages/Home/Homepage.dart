@@ -14,8 +14,8 @@ class CustomerHomeScreen extends StatefulWidget {
 class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
   int _Seletedindex=0;
   final List<Widget> _tabs=[
-    Homeview(),
-    Category(),
+   const Homeview(),
+   const Category(),
     Center(child: Text('Stores')),
     Center(child: Text('Cart')),
     Center(child: Text('Profile')),
