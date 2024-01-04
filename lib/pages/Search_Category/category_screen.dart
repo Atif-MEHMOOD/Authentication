@@ -90,8 +90,10 @@ backgroundColor: Colors.white,
   Widget Sidebare( size){
 
 
+
     return SingleChildScrollView(
       child: GestureDetector(
+
 
         child: SizedBox(
 
@@ -131,6 +133,7 @@ backgroundColor: Colors.white,
       height: size.height * 0.8,
       width: size.width * 0.8,
       child: PageView(
+
         scrollDirection: Axis.vertical,
         controller: _controller,
         onPageChanged: (index) {

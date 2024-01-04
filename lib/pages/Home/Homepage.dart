@@ -1,4 +1,6 @@
+import 'package:authenticationproject/pages/Cart/cart_screen.dart';
 import 'package:authenticationproject/pages/Home/home_view.dart';
+import 'package:authenticationproject/pages/Stores/store_main_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../Search_Category/category_screen.dart';
@@ -16,8 +18,8 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
   final List<Widget> _tabs=[
    const Homeview(),
    const Category(),
-    Center(child: Text('Stores')),
-    Center(child: Text('Cart')),
+   const Stores(),
+    const Cart(),
     Center(child: Text('Profile')),
   ];
   @override
