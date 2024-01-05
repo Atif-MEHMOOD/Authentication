@@ -1,5 +1,6 @@
 import 'package:authenticationproject/pages/Cart/cart_screen.dart';
 import 'package:authenticationproject/pages/Home/home_view.dart';
+import 'package:authenticationproject/pages/Profile/profile_screen.dart';
 import 'package:authenticationproject/pages/Stores/store_main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
    const Category(),
    const Stores(),
     const Cart(),
-    Center(child: Text('Profile')),
+    const Profile(),
   ];
   @override
   Widget build(BuildContext context) {

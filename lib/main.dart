@@ -14,6 +14,7 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  
   Fluttertoast.showToast;
   runApp(const MyApp());
 }
